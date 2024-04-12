@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MinhTri-Template</title>
+<link href="./Css-Javascript/css2" rel="stylesheet">
+<link rel="shortcut icon" href="https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/5/23/photo-1-1653312456997323551040.jpg" type="image/png">
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link rel="stylesheet" href="./Css-Javascript/home.css">
+<style>
+  /* Thêm CSS cho rainbow text */
+  @keyframes rainbow {
+    0% { color: red; text-shadow: 0 0 5px red; }
+    14% { color: orange; text-shadow: 0 0 5px orange; }
+    28% { color: yellow; text-shadow: 0 0 5px yellow; }
+    42% { color: green; text-shadow: 0 0 5px green; }
+    57% { color: blue; text-shadow: 0 0 5px blue; }
+    71% { color: indigo; text-shadow: 0 0 5px indigo; }
+    85% { color: violet; text-shadow: 0 0 5px violet; }
+    100% { color: red; text-shadow: 0 0 5px red; }
+  }
+  .rainbow-text {
+    font-style: italic;
+    animation: rainbow 0.5s infinite;
+  }
+
+  /* Điều chỉnh vị trí và căn chỉnh chữ */
+  .page-item-wrap {
+    text-align: center;
+  }
+
+  /* Thêm hiệu ứng chuyển đổi chữ */
+  .text-transition {
+    animation: textTransition 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes textTransition {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+
+  /* CSS cho hiển thị thời gian */
+  #clock-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-size: 24px; /* Tăng kích thước chữ số */
+    font-family: 'Arial', sans-serif; /* Chọn kiểu chữ */
+    color: #ffffff; /* Màu chữ trắng */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Tạo hiệu ứng phản quang cho chữ số */
+  }
+</style>
+</head>
+<body style="overflow: hidden;">
+<div id="clock-container">
+  <div id="clock"></div>
+</div>
+<video autoplay muted loop id="background-video" style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;">
+  <source src="your-video.mp4" type="video/mp4">
+</video>
+
+<div class="min-h-full flex-h-center page-bg" id="background_div">
+  <div class="background-overlay"></div>
+  <div class="mt-16 page-full-wrap relative">
+    <img class="display-image m-auto" src="./Css-Javascript/MinhTri-Template.png" >
+    <h2 class="page-title page-text-color page-text-font mt-8 text-center">Minh   Trí <img src="https://st.quantrimang.com/photos/image/2020/05/09/Tich-xanh.png"  width="20" height="20" alpha="_MinhTri_"></h2>
+    <div class="page-bioline text-fs-16 page-text-color page-text-font mt-8 ln-h-22 text-center rainbow-text text-transition" id="text">I love VietNam</div>
+    <div class="flex-both-center flex-wrap mt-16">
+      <audio id="myAudio">
+        <source src="music.ogg" type="audio/ogg">
+        <source src="music.mp3" type="audio/mpeg">
+      </audio>
+      <button class="glow-on-hover" onclick="playAudio()" type="button">Play Music </button>&nbsp;&nbsp;
+      <button class="glow-on-hover" onclick="pauseAudio()" type="button">Stop Music</button> 
+    </div>
+    <div class="mt-16"> <!-- Dịch lên trên -->
+      <!-- Thêm rainbow text vào các đoạn link -->
+      <div class="page-item-wrap relative">
+        <div class="page-item flex-both-center relative"></div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" href="https://www.facebook.com/minhtridevlop/" target="_button">Fakebook</a>
+      </div>
+      <div class="page-item-wrap relative">
+        <div class="page-item flex-both-center relative"></div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" target="_button">MBBank: 29060372156</a>
+      </div>
+      <div class="page-item-wrap relative">
+        <div class="page-item flex-both-center relative"></div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" target="_button">MoMo: 0372372156</a>
+      </div>
+      <!-- Thêm div cho số điện thoại và sử dụng CSS tương tự như rainbow-text -->
+      <div class="page-item-wrap relative">
+        <div class="page-item flex-both-center relative"></div>
+        <div class="page-item-each flex-both-center rainbow-text">Phone: 0372372156</div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <br>
+  </div>
+</div>
+<script>
+  var x = document.getElementById("myAudio"); 
+
+  function playAudio() { 
+    x.play(); 
+  } 
+
+  function pauseAudio() { 
+    x.pause(); 
+  } 
+
+  // Hiển thị thời gian
+  function displayTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeString = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("clock").innerHTML = timeString;
+  }
+
+  // Gọi hàm displayTime mỗi giây
+  setInterval(displayTime, 1000);
+  
+  setInterval(function() {
+    var textElement = document.getElementById("text");
+    if (textElement.innerText === "I love VietNam") {
+      textElement.innerText = "Hello World";
+    } else {
+      textElement.innerText = "I love VietNam";
+    }
+  }, 2000); // Đổi nội dung sau mỗi 2 giây
+</script>
+<div class="troywell-avia"></div>
+<div class="troywell-caa"></div>
+</body>
+</html>
