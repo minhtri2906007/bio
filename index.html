@@ -13,29 +13,28 @@
   body, html {
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Màu nền đen */
+    background-color: #3a3f46; /* Màu xám xanh đậm */
     color: #ffffff; /* Màu chữ trắng */
   }
 
   /* Thêm CSS cho rainbow text */
   @keyframes rainbow {
-    0% { color: red; text-shadow: 0 0 5px red; }
-    14% { color: orange; text-shadow: 0 0 5px orange; }
-    28% { color: yellow; text-shadow: 0 0 5px yellow; }
-    42% { color: green; text-shadow: 0 0 5px green; }
-    57% { color: blue; text-shadow: 0 0 5px blue; }
-    71% { color: indigo; text-shadow: 0 0 5px indigo; }
-    85% { color: violet; text-shadow: 0 0 5px violet; }
-    100% { color: red; text-shadow: 0 0 5px red; }
+    0% { color: #FF5733; }
+    14.28% { color: #DAF7A6; }
+    28.56% { color: #C70039; }
+    42.84% { color: #FFC300; }
+    57.12% { color: #900C3F; }
+    71.4% { color: #9AECDB; }
+    85.68% { color: #581845; }
+    100% { color: #FF5733; }
   }
   .rainbow-text {
-    font-style: italic;
-    animation: rainbow 0.5s infinite;
+    animation: rainbow 2s infinite;
   }
 
   /* Điều chỉnh vị trí và căn chỉnh chữ */
   .page-item-wrap {
-    text-align: center;
+    text-align: left; /* Căn trái */
   }
 
   /* Thêm hiệu ứng chuyển đổi chữ */
@@ -54,10 +53,17 @@
     top: 20px;
     right: 20px;
     z-index: 9999;
-    font-size: 24px; /* Tăng kích thước chữ số */
+    font-size: 22px; /* Tăng kích thước chữ số */
     font-family: 'Arial', sans-serif; /* Chọn kiểu chữ */
     color: #ffffff; /* Màu chữ trắng */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Tạo hiệu ứng phản quang cho chữ số */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Tạo hiệu ứng phản quang cho chữ số */
+    animation: sparkle 2s infinite; /* Hiệu ứng sparkle */
+  }
+
+  @keyframes sparkle {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
   }
 
   /* Đặt màu chữ trắng cho phần "Minh Trí" */
@@ -76,6 +82,78 @@
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Hiệu ứng phản quang */
   }
 
+  /* Đặt kích thước chữ lớn hơn cho các từ khóa */
+  .page-item-each {
+    font-size: 20px;
+    font-weight: bold; /* In đậm */
+  }
+
+  /* Điều chỉnh vị trí ảnh */
+  .image-left {
+    float: left;
+    margin-right: 10px; /* Khoảng cách giữa ảnh và nội dung */
+  }
+  
+  /* Hiệu ứng nhấp nháy cho chữ */
+  @keyframes multicolor {
+    0% { color: #FF5733; }
+    14.28% { color: #DAF7A6; }
+    28.56% { color: #C70039; }
+    42.84% { color: #FFC300; }
+    57.12% { color: #900C3F; }
+    71.4% { color: #9AECDB; }
+    85.68% { color: #581845; }
+    100% { color: #FF5733; }
+  }
+
+  @keyframes multicolor2 {
+    0% { color: #FF5733; }
+    14.28% { color: #900C3F; }
+    28.56% { color: #FFC300; }
+    42.84% { color: #DAF7A6; }
+    57.12% { color: #C70039; }
+    71.4% { color: #9AECDB; }
+    85.68% { color: #FF5733; }
+    100% { color: #581845; }
+  }
+
+  @keyframes multicolor3 {
+    0% { color: #C70039; }
+    14.28% { color: #FFC300; }
+    28.56% { color: #DAF7A6; }
+    42.84% { color: #FF5733; }
+    57.12% { color: #581845; }
+    71.4% { color: #900C3F; }
+    85.68% { color: #9AECDB; }
+    100% { color: #FF5733; }
+  }
+
+  @keyframes multicolor4 {
+    0% { color: #FF5733; }
+    14.28% { color: #900C3F; }
+    28.56% { color: #FFC300; }
+    42.84% { color: #DAF7A6; }
+    57.12% { color: #C70039; }
+    71.4% { color: #9AECDB; }
+    85.68% { color: #FF5733; }
+    100% { color: #581845; }
+  }
+
+  .multicolor {
+    animation: multicolor 12s infinite;
+  }
+
+  .multicolor2 {
+    animation: multicolor2 2s infinite;
+  }
+
+  .multicolor3 {
+    animation: multicolor3 2s infinite;
+  }
+
+  .multicolor4 {
+    animation: multicolor4 3s infinite;
+  }
 </style>
 </head>
 <body style="overflow: hidden;">
@@ -84,7 +162,7 @@
 </div>
 
 <!-- Thêm một div để tạo nền màu đen -->
-<div id="background_div" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000;"></div>
+<div id="background_div" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #222222;"></div>
 
 <div class="min-h-full flex-h-center page-bg">
   <div class="mt-16 page-full-wrap relative">
@@ -102,21 +180,31 @@
     <div class="mt-16"> <!-- Dịch lên trên -->
       <!-- Thêm rainbow text vào các đoạn link -->
       <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative"></div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" href="https://www.facebook.com/decsrc/" target="_button">Facebook</a>
+        <div class="page-item flex-both-center relative">
+        </div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor" href="https://www.facebook.com/decsrc/" target="_button">Facebook</a>
       </div>
       <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative"></div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" target="_button">MBBank: 29060372156</a>
+        <div class="page-item flex-both-center relative">
+        </div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor" href="https://github.com/minhtri2906007/hi/blob/main/hi" target="_button">Github</a>
+      </div>      
+      <div class="page-item-wrap relative">
+        <div class="page-item flex-both-center relative">
+        </div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor2" target="_button">MBBank: 29060372156</a>
       </div>
       <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative"></div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text" target="_button">MoMo: 0372372156</a>
+        <div class="page-item flex-both-center relative">
+        </div>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor3" target="_button">MoMo: 0372372156</a>
       </div>
       <!-- Thêm div cho số điện thoại và sử dụng CSS tương tự như rainbow-text -->
       <div class="page-item-wrap relative">
         <div class="page-item flex-both-center relative"></div>
-        <div class="page-item-each flex-both-center rainbow-text">Phone: 0372372156</div>
+        <div class="page-item-each flex-both-center rainbow-text multicolor4">
+          Phone: 0372372156
+        </div>
       </div>
     </div>
   </div>
