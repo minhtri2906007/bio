@@ -80,6 +80,7 @@
     color: #ffffff;
     font-weight: bold; /* In đậm */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Hiệu ứng phản quang */
+    font-style: italic; /* In nghiêng */
   }
 
   /* Đặt kích thước chữ lớn hơn cho các từ khóa */
@@ -140,7 +141,7 @@
   }
 
   .multicolor {
-    animation: multicolor 12s infinite;
+    animation: multicolor 2.3s infinite;
   }
 
   .multicolor2 {
@@ -153,6 +154,21 @@
 
   .multicolor4 {
     animation: multicolor4 3s infinite;
+  }
+
+  /* Hiệu ứng phản quang cho "I love VietNam" và "Welcome Web Page" */
+  .love-text,
+  .welcome-text {
+    font-size: 28px; /* Tăng kích thước */
+    margin-top: 20px; /* Dịch lên trên */
+    animation: glow 1.5s linear infinite alternate; /* Hiệu ứng phản quang */
+    font-weight: bold; /* In đậm */
+    font-style: italic; /* In nghiêng */
+  }
+
+  @keyframes glow {
+    0% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 40px rgba(255,255,255,1), 0 0 80px rgba(255,255,255,0.5); }
   }
 </style>
 </head>
@@ -182,28 +198,24 @@
       <div class="page-item-wrap relative">
         <div class="page-item flex-both-center relative">
         </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor" href="https://www.facebook.com/decsrc/" target="_button">Facebook</a>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor1" href="https://www.facebook.com/decsrc/" target="_button">Facebook</a>
       </div>
       <div class="page-item-wrap relative">
         <div class="page-item flex-both-center relative">
         </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor" href="https://github.com/minhtri2906007/hi/blob/main/hi" target="_button">Github</a>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor2" href="https://github.com/minhtri2906007/hi/blob/main/hi" target="_button">Github</a>
       </div>      
       <div class="page-item-wrap relative">
         <div class="page-item flex-both-center relative">
         </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor2" target="_button">MBBank: 29060372156</a>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor3" target="_button">MBBank: 29060372156</a>
       </div>
       <div class="page-item-wrap relative">
         <div class="page-item flex-both-center relative">
         </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor3" target="_button">MoMo: 0372372156</a>
+        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor4" target="_button">MoMo: 0372372156</a>
       </div>
       <!-- Thêm div cho số điện thoại và sử dụng CSS tương tự như rainbow-text -->
-      <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative"></div>
-        <div class="page-item-each flex-both-center rainbow-text multicolor4">
-          Phone: 0372372156
         </div>
       </div>
     </div>
@@ -238,10 +250,10 @@
   
   setInterval(function() {
     var textElement = document.getElementById("text");
-    if (textElement.innerText === "I love VietNam 🇻🇳") {
-      textElement.innerText = "Welcome  Web  Page";
+    if (textElement.innerText === "𝑰  𝒍𝒐𝒗𝒆  𝑽𝒊𝒆𝒕𝑵𝒂𝒎 🇻🇳") {
+      textElement.innerText = "𝑾𝒆𝒍𝒄𝒐𝒎𝒆 !";
     } else {
-      textElement.innerText = "I  love  VietNam 🇻🇳";
+      textElement.innerText = "𝑰  𝒍𝒐𝒗𝒆  𝑽𝒊𝒆𝒕𝑵𝒂𝒎 🇻🇳";
     }
   }, 2000); // Đổi nội dung sau mỗi 2 giây
 </script>
