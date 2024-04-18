@@ -1,263 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MinhTri-Template</title>
-<link href="./Css-Javascript/css2" rel="stylesheet">
-<link rel="shortcut icon" href="https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/5/23/photo-1-1653312456997323551040.jpg" type="image/png">
-<link rel="preconnect" href="https://fonts.gstatic.com/">
-<link rel="stylesheet" href="./Css-Javascript/home.css">
-<style>
-  /* Thiết lập màu nền ban đầu */
-  body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #3a3f46; /* Màu xám xanh đậm */
-    color: #ffffff; /* Màu chữ trắng */
-  }
-
-  /* Thêm CSS cho rainbow text */
-  @keyframes rainbow {
-    0% { color: #FF5733; }
-    14.28% { color: #DAF7A6; }
-    28.56% { color: #C70039; }
-    42.84% { color: #FFC300; }
-    57.12% { color: #900C3F; }
-    71.4% { color: #9AECDB; }
-    85.68% { color: #581845; }
-    100% { color: #FF5733; }
-  }
-  .rainbow-text {
-    animation: rainbow 2s infinite;
-  }
-
-  /* Điều chỉnh vị trí và căn chỉnh chữ */
-  .page-item-wrap {
-    text-align: left; /* Căn trái */
-  }
-
-  /* Thêm hiệu ứng chuyển đổi chữ */
-  .text-transition {
-    animation: textTransition 1s ease-in-out infinite alternate;
-  }
-
-  @keyframes textTransition {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
-  }
-
-  /* CSS cho hiển thị thời gian */
-  #clock-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    font-size: 22px; /* Tăng kích thước chữ số */
-    font-family: 'Arial', sans-serif; /* Chọn kiểu chữ */
-    color: #ffffff; /* Màu chữ trắng */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Tạo hiệu ứng phản quang cho chữ số */
-    animation: sparkle 2s infinite; /* Hiệu ứng sparkle */
-  }
-
-  @keyframes sparkle {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  /* Đặt màu chữ trắng cho phần "Minh Trí" */
-  .page-title {
-    color: #ffffff;
-    font-size: 36px; /* Kích thước lớn hơn */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Hiệu ứng phản quang */
-    letter-spacing: 5px; /* Khoảng cách giữa các ký tự */
-  }
-
-  /* Đặt màu chữ trắng và hiệu ứng phản quang cho phần "Welcome" và "I love VietNam" */
-  .welcome-text,
-  .love-text {
-    color: #ffffff;
-    font-weight: bold; /* In đậm */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Hiệu ứng phản quang */
-    font-style: italic; /* In nghiêng */
-  }
-
-  /* Đặt kích thước chữ lớn hơn cho các từ khóa */
-  .page-item-each {
-    font-size: 20px;
-    font-weight: bold; /* In đậm */
-  }
-
-  /* Điều chỉnh vị trí ảnh */
-  .image-left {
-    float: left;
-    margin-right: 10px; /* Khoảng cách giữa ảnh và nội dung */
-  }
-  
-  /* Hiệu ứng nhấp nháy cho chữ */
-  @keyframes multicolor {
-    0% { color: #FF5733; }
-    14.28% { color: #DAF7A6; }
-    28.56% { color: #C70039; }
-    42.84% { color: #FFC300; }
-    57.12% { color: #900C3F; }
-    71.4% { color: #9AECDB; }
-    85.68% { color: #581845; }
-    100% { color: #FF5733; }
-  }
-
-  @keyframes multicolor2 {
-    0% { color: #FF5733; }
-    14.28% { color: #900C3F; }
-    28.56% { color: #FFC300; }
-    42.84% { color: #DAF7A6; }
-    57.12% { color: #C70039; }
-    71.4% { color: #9AECDB; }
-    85.68% { color: #FF5733; }
-    100% { color: #581845; }
-  }
-
-  @keyframes multicolor3 {
-    0% { color: #C70039; }
-    14.28% { color: #FFC300; }
-    28.56% { color: #DAF7A6; }
-    42.84% { color: #FF5733; }
-    57.12% { color: #581845; }
-    71.4% { color: #900C3F; }
-    85.68% { color: #9AECDB; }
-    100% { color: #FF5733; }
-  }
-
-  @keyframes multicolor4 {
-    0% { color: #FF5733; }
-    14.28% { color: #900C3F; }
-    28.56% { color: #FFC300; }
-    42.84% { color: #DAF7A6; }
-    57.12% { color: #C70039; }
-    71.4% { color: #9AECDB; }
-    85.68% { color: #FF5733; }
-    100% { color: #581845; }
-  }
-
-  .multicolor {
-    animation: multicolor 2.3s infinite;
-  }
-
-  .multicolor2 {
-    animation: multicolor2 2s infinite;
-  }
-
-  .multicolor3 {
-    animation: multicolor3 2s infinite;
-  }
-
-  .multicolor4 {
-    animation: multicolor4 3s infinite;
-  }
-
-  /* Hiệu ứng phản quang cho "I love VietNam" và "Welcome Web Page" */
-  .love-text,
-  .welcome-text {
-    font-size: 28px; /* Tăng kích thước */
-    margin-top: 20px; /* Dịch lên trên */
-    animation: glow 1.5s linear infinite alternate; /* Hiệu ứng phản quang */
-    font-weight: bold; /* In đậm */
-    font-style: italic; /* In nghiêng */
-  }
-
-  @keyframes glow {
-    0% { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
-    100% { text-shadow: 0 0 40px rgba(255,255,255,1), 0 0 80px rgba(255,255,255,0.5); }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://raw.githubusercontent.com/weixiong15/PHP-Bookstore-Website-Example/master/bookstore/image/bg.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: transparent;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            font-weight: bold;
+            display: none; /* Ẩn ban đầu */
+        }
+        .show {
+            display: block; /* Hiển thị khi cần thiết */
+        }
+        p {
+            color: white;
+            line-height: 1.6;
+            display: none; /* Ẩn ban đầu */
+        }
+        .show p {
+            display: block; /* Hiển thị khi cần thiết */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            color: white;
+            display: none; /* Ẩn ban đầu */
+        }
+        .show li {
+            display: list-item; /* Hiển thị khi cần thiết */
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .avatar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 100px; /* Giảm chiều rộng của avatar */
+            height: 100px; /* Giảm chiều cao của avatar */
+            border-radius: 50%;
+        }
+        .avatar-small {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+        .name {
+            color: white;
+            font-size: 24px;
+            margin-left: 10px; /* Khoảng cách giữa tên và avatar */
+        }
+        .bio {
+            color: white;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body style="overflow: hidden;">
-<div id="clock-container">
-  <div id="clock"></div>
-</div>
-
-<!-- Thêm một div để tạo nền màu đen -->
-<div id="background_div" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #222222;"></div>
-
-<div class="min-h-full flex-h-center page-bg">
-  <div class="mt-16 page-full-wrap relative">
-    <img class="display-image m-auto" src="./Css-Javascript/MinhTri-Template.png" >
-    <h2 class="page-title page-text-color page-text-font mt-8 text-center">Minh   Trí  <img src="https://st.quantrimang.com/photos/image/2020/05/09/Tich-xanh.png"  width="20" height="20" alpha="_MinhTri_"></h2>
-    <div class="page-bioline text-fs-16 page-text-color page-text-font mt-8 ln-h-22 text-center rainbow-text text-transition" id="text">I love VietNam</div>
-    <div class="flex-both-center flex-wrap mt-16">
-      <audio id="myAudio">
-        <source src="music.ogg" type="audio/ogg">
-        <source src="music.mp3" type="audio/mpeg">
-      </audio>
-      <button class="glow-on-hover" onclick="playAudio()" type="button">Play Music </button>&nbsp;&nbsp;
-      <button class="glow-on-hover" onclick="pauseAudio()" type="button">Stop Music</button> 
+<body>
+    <div class="container">
+        <div class="avatar-container">
+            <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg" alt="Avatar" class="avatar">
+            <h1 class="name">Xin chào! Tôi là Trần Minh Trí </h1>
+            <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Avatar Small" class="avatar-small">
+        </div>
+        <p class="bio">Dưới đây là một số thông tin về tôi:</p>
+        <ul>
+            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/decsrc" class="link">Minh Trí 🇻🇳 </a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/minhtri2906007" class="link">@minhtri2906007</a></li>
+            <li><strong>Số điện thoại:</strong> <span class="bold">0372372156</span></li>
+            <li><strong>MB Bank:</strong> <span class="bold">29060372156</span></li>
+        </ul>
+        <!-- Embed YouTube Video -->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7Xoran6JebY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
-    <div class="mt-16"> <!-- Dịch lên trên -->
-      <!-- Thêm rainbow text vào các đoạn link -->
-      <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative">
-        </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor1" href="https://www.facebook.com/decsrc/" target="_button">Facebook</a>
-      </div>
-      <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative">
-        </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor2" href="https://github.com/minhtri2906007/hi/blob/main/hi" target="_button">Github</a>
-      </div>      
-      <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative">
-        </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor3" target="_button">MBBank: 29060372156</a>
-      </div>
-      <div class="page-item-wrap relative">
-        <div class="page-item flex-both-center relative">
-        </div>
-        <a rel="noopener nofollow" class="page-item-each flex-both-center rainbow-text multicolor4" target="_button">MoMo: 0372372156</a>
-      </div>
-      <!-- Thêm div cho số điện thoại và sử dụng CSS tương tự như rainbow-text -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <br>
-  </div>
-</div>
-<script>
-  var x = document.getElementById("myAudio"); 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var name = document.querySelector(".name");
+            var bio = document.querySelector(".bio");
+            var listItems = document.querySelectorAll("li");
 
-  function playAudio() { 
-    x.play(); 
-  } 
+            setTimeout(function() {
+                name.classList.add("show");
+            }, 500);
 
-  function pauseAudio() { 
-    x.pause(); 
-  } 
+            setTimeout(function() {
+                bio.classList.add("show");
+            }, 1000);
 
-  // Hiển thị thời gian
-  function displayTime() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var seconds = now.getSeconds();
-    var timeString = hours + ":" + minutes + ":" + seconds;
-    document.getElementById("clock").innerHTML = timeString;
-  }
-
-  // Gọi hàm displayTime mỗi giây
-  setInterval(displayTime, 1000);
-  
-  setInterval(function() {
-    var textElement = document.getElementById("text");
-    if (textElement.innerText === "𝑰  𝒍𝒐𝒗𝒆  𝑽𝒊𝒆𝒕𝑵𝒂𝒎 🇻🇳") {
-      textElement.innerText = "𝑾𝒆𝒍𝒄𝒐𝒎𝒆 !";
-    } else {
-      textElement.innerText = "𝑰  𝒍𝒐𝒗𝒆  𝑽𝒊𝒆𝒕𝑵𝒂𝒎 🇻🇳";
-    }
-  }, 2000); // Đổi nội dung sau mỗi 2 giây
-</script>
-<div class="troywell-avia"></div>
-<div class="troywell-caa"></div>
+            listItems.forEach(function(item, index) {
+                setTimeout(function() {
+                    item.classList.add("show");
+                }, (index + 1) * 500);
+            });
+        });
+    </script>
 </body>
 </html>
