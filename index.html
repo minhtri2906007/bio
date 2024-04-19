@@ -14,6 +14,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            height: 100vh; /* Bao phủ toàn bộ chiều cao của màn hình */
         }
         .container {
             max-width: 600px;
@@ -21,12 +22,11 @@
             background-color: transparent;
             border-radius: 8px;
             padding: 20px;
-            text-align: center;
+            text-align: center; /* Căn giữa nội dung trong container */
         }
         h1 {
             color: white;
             font-weight: bold;
-            display: none; /* Ẩn ban đầu */
         }
         .show {
             display: block; /* Hiển thị khi cần thiết */
@@ -34,25 +34,32 @@
         p {
             color: white;
             line-height: 1.6;
-            display: none; /* Ẩn ban đầu */
+            text-align: center; /* Căn giữa văn bản trong đoạn */
         }
         .show p {
             display: block; /* Hiển thị khi cần thiết */
         }
-        ul {
+        .social-links {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        li {
-            margin-bottom: 10px;
-            color: white;
-            display: none; /* Ẩn ban đầu */
+        .social-links li {
+            margin-right: 15px;
         }
-        .show li {
-            display: list-item; /* Hiển thị khi cần thiết */
+        .social-links li:last-child {
+            margin-right: 0;
+        }
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; /* Làm cho hình ảnh trở thành hình tròn */
         }
         .bold {
             font-weight: bold;
+            color: white; /* Màu chữ cho số điện thoại và số tài khoản MB Bank */
         }
         .link {
             color: #007bff;
@@ -66,6 +73,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+            flex-direction: column; /* Đổi hướng của flex thành dọc */
         }
         .avatar {
             width: 100px; /* Giảm chiều rộng của avatar */
@@ -75,7 +83,7 @@
         .name {
             color: white;
             font-size: 24px;
-            margin-left: 10px; /* Khoảng cách giữa tên và avatar */
+            margin-top: 10px; /* Khoảng cách giữa tên và avatar */
         }
         .bio {
             color: white;
@@ -102,41 +110,25 @@
 <body>
     <div class="container">
         <div class="avatar-container">
-            <img src="https://cdn.sforum.vn/sforum/wp-content/uploads/2023/10/avatar-trang-4.jpg" alt="Avatar" class="avatar">
-            <h1 class="name">Xin chào! Tôi là Minh Trí </h1>
+            <img src="https://i.pinimg.com/originals/fb/e1/50/fbe1508668f176e7b2740df526c8d4dc.gif" alt="Avatar" class="avatar">
+            <h1 class="name">
+                Minh Trí 
+                <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Small Image" style="width: 20px; height: 20px; vertical-align: middle;">
+            </h1>          
         </div>
-        <p class="bio">Dưới đây là một số thông tin về tôi:</p>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/decsrc" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a></li>
+            <li><a href="https://www.facebook.com/messages/e2ee/t/" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/fbmessenger.png" alt="Messenger"></a></li>
+            <li><a href="https://github.com/minhtri2906007/hi/blob/main/hi" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/github.png" alt="GitHub"></a></li>
+        </ul>
         <ul>
-            <li><strong>Facebook:</strong> <a href="https://www.facebook.com/decsrc" class="link">Click vào đây</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/minhtri2906007" class="link">Click vào đây</a></li>
-            <li><strong>Số điện thoại:</strong> <span class="bold">0372372156</span></li>
-            <li><strong>MB Bank:</strong> <span class="bold">29060372156</span></li>
+            <li><span class="bold"> Số điện thoại:</strong> <span class="bold">0372372156</span></li>
+            <li><span class="bold">MB Bank:</strong> <span class="bold">29060372156</span></li>
         </ul>
         <!-- Embed YouTube Video -->
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/7Xoran6JebY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vvyQihWPPS4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var name = document.querySelector(".name");
-            var bio = document.querySelector(".bio");
-            var listItems = document.querySelectorAll("li");
-
-            setTimeout(function() {
-                name.classList.add("show");
-            }, 500);
-
-            setTimeout(function() {
-                bio.classList.add("show");
-            }, 1000);
-
-            listItems.forEach(function(item, index) {
-                setTimeout(function() {
-                    item.classList.add("show");
-                }, (index + 1) * 500);
-            });
-        });
-    </script>
 </body>
 </html>
