@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bio Cá Nhân</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
             background-image: url('https://raw.githubusercontent.com/weixiong15/PHP-Bookstore-Website-Example/master/bookstore/image/bg.gif');
@@ -16,17 +16,18 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             height: 100vh;
+            color: white; /* Ensure text is visible on all backgrounds */
         }
         .container {
             max-width: 600px;
             margin: 20px auto;
-            background-color: transparent;
+            background-color: transparent; /* No background color */
             border-radius: 8px;
             padding: 20px;
             text-align: center;
         }
         h1 {
-            color: white;
+            font-size: 1.5em; /* Smaller font size */
             font-weight: 700;
             text-shadow: 2px 2px 4px #000000;
         }
@@ -34,12 +35,11 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            color: white;
-            font-size: 18px;
+            font-size: 0.8em; /* Smaller font size */
             text-shadow: 1px 1px 2px #000000;
         }
         #time {
-            top: 35px;
+            top: 30px; /* Adjusted for smaller font */
         }
         .social-links {
             list-style-type: none;
@@ -58,7 +58,6 @@
         }
         .bold {
             font-weight: bold;
-            color: white;
             text-shadow: 1px 1px 2px #000000;
         }
         .link {
@@ -84,7 +83,7 @@
             box-shadow: 0 0 8px 3px #ffffff;
         }
         .name {
-            font-size: 24px;
+            font-size: 1.2em; /* Smaller font size */
             margin-top: 10px;
         }
         .video-container {
@@ -94,6 +93,7 @@
             height: 0;
             overflow: hidden;
             border-radius: 10px;
+            background: transparent; /* No border for video */
         }
         .video-container iframe {
             position: absolute;
@@ -106,6 +106,8 @@
         }
         li {
             list-style: none;
+            font-size: 0.9em; /* Smaller font size */
+            margin-bottom: 19px; /* 5mm spacing */
         }
     </style>
 </head>
