@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio Cá Nhân</title>
+    <title>Bản Thân</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,18 +16,18 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             height: 100vh;
-            color: white; /* Ensure text is visible on all backgrounds */
+            color: white;
         }
         .container {
             max-width: 600px;
             margin: 20px auto;
-            background-color: transparent; /* No background color */
+            background-color: transparent;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
         }
         h1 {
-            font-size: 1.5em; /* Smaller font size */
+            font-size: 1.5em;
             font-weight: 700;
             text-shadow: 2px 2px 4px #000000;
         }
@@ -35,11 +35,11 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            font-size: 0.8em; /* Smaller font size */
+            font-size: 0.8em;
             text-shadow: 1px 1px 2px #000000;
         }
         #time {
-            top: 30px; /* Adjusted for smaller font */
+            top: 30px;
         }
         .social-links {
             list-style-type: none;
@@ -47,14 +47,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 auto;
         }
         .social-links li {
-            margin-right: 15px;
+            margin: 0 5px;
         }
         .social-links img {
             width: 30px;
             height: 30px;
             border-radius: 50%;
+            vertical-align: middle;
         }
         .bold {
             font-weight: bold;
@@ -80,10 +82,10 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            box-shadow: 0 0 8px 3px #ffffff;
+            box-shadow: 0 0 8px 2px #ffffff;
         }
         .name {
-            font-size: 1.2em; /* Smaller font size */
+            font-size: 1.2em;
             margin-top: 10px;
         }
         .video-container {
@@ -93,7 +95,7 @@
             height: 0;
             overflow: hidden;
             border-radius: 10px;
-            background: transparent; /* No border for video */
+            background: transparent;
         }
         .video-container iframe {
             position: absolute;
@@ -106,9 +108,20 @@
         }
         li {
             list-style: none;
-            font-size: 0.9em; /* Smaller font size */
-            margin-bottom: 19px; /* 5mm spacing */
+            font-size: 0.9em;
+            margin-bottom: 19px;
+            text-align: left; /* Align text to the left */
+            padding-left: 20px; /* Add padding to align with Email */
         }
+        @media (max-width: 768px) {
+    .social-links li {
+        margin: 0 3px; /* Thậm chí khoảng cách còn nhỏ hơn trên thiết bị di động */
+    }
+    .social-links img {
+        width: 20px; /* Làm nhỏ biểu tượng lại trên thiết bị di động */
+        height: 20px;
+    }
+}
     </style>
 </head>
 <body>
@@ -116,24 +129,26 @@
     <div id="time"></div>
     <div class="container">
         <div class="avatar-container">
-            <img src="https://i.pinimg.com/originals/fb/e1/50/fbe1508668f176e7b2740df526c8d4dc.gif" alt="Avatar" class="avatar">
+            <img src="https://i.pinimg.com/originals/fb/e1/50/fbe1508668f176e7b2740df526c8d4dc.gif" alt="Ảnh đại diện" class="avatar">
             <h1 class="name">
-                Minh Trí 
-                <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Small Image" style="width: 20px; height: 20px; vertical-align: middle;">
+                Minh Trí
+                <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Hình ảnh nhỏ" style="width: 20px; height: 20px; vertical-align: middle;">
             </h1>          
         </div>
         <ul class="social-links">
             <li><a href="https://www.facebook.com/decsrc" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a></li>
             <li><a href="https://www.facebook.com/messages/t/" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/fbmessenger.png" alt="Messenger"></a></li>
             <li><a href="https://github.com/minhtri2906007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/github.png" alt="GitHub"></a></li>
+            <li><a href="https://web.telegram.com/@minhtri2907" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram"></a></li>
+            <li><a href="https://www.tiktok.com/@minhtri.tr2007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/tiktok.png" alt="TikTok"></a></li>
         </ul>
         <ul>
-            <li><span class="bold">Phone:</span> <span class="bold">0372372156</span></li>
-            <li><span class="bold">MB Bank:</span> <span class="bold">29060372156</span></li>
-            <li><span class="bold">Email:</span> <span class="bold">tranminhtri29062007@gmail.com</span></li>
+            <li><span class="bold">phone</span> <span class="bold">0372372156</span></li>
+            <li><span class="bold">mbbank</span> <span class="bold">29060372156</span></li>
+            <li><span class="bold">email</span> <span class="bold">tranminhtri29062007@gmail.com</span></li>
         </ul>        
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vvyQihWPPS4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fcZbRkxsdbE?si=8IIalRwfae_8k7JP" title="Trình phát video YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
     <script>
@@ -147,8 +162,8 @@
 
             var hours = now.getHours();
             var minutes = now.getMinutes();
-            now.getSeconds();
-            var timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+            var seconds = now.getSeconds();
+            var timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
 
             document.getElementById('date').textContent = dateString;
             document.getElementById('time').textContent = timeString;
