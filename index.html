@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Press Start 2P', cursive;
+            font-family: Arial, sans-serif; /* General content font, easier to read than Press Start 2P */
             margin: 0;
             padding: 0;
             background-image: url('https://raw.githubusercontent.com/weixiong15/PHP-Bookstore-Website-Example/master/bookstore/image/bg.gif');
@@ -27,6 +27,7 @@
             text-align: center;
         }
         h1 {
+            font-family: 'Press Start 2P', cursive; /* Preserve retro style for titles */
             font-size: 1.5em;
             font-weight: 700;
             text-shadow: 2px 2px 4px #000000;
@@ -35,11 +36,11 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            font-size: 0.8em;
-            text-shadow: 1px 1px 2px #000000;
+            font-size: 1.5em; /* Increased font size */
+            text-shadow: 2px 2px 4px #000000; /* Enhanced text shadow for better visibility */
         }
         #time {
-            top: 30px;
+            top: 50px; /* Adjusted position to accommodate larger font size */
         }
         .social-links {
             list-style-type: none;
@@ -57,10 +58,6 @@
             height: 30px;
             border-radius: 50%;
             vertical-align: middle;
-        }
-        .bold {
-            font-weight: bold;
-            text-shadow: 1px 1px 2px #000000;
         }
         .link {
             color: #007bff;
@@ -96,6 +93,7 @@
             overflow: hidden;
             border-radius: 10px;
             background: transparent;
+            margin-top: 30px;
         }
         .video-container iframe {
             position: absolute;
@@ -106,22 +104,19 @@
             border: none;
             border-radius: 10px;
         }
-        li {
-            list-style: none;
-            font-size: 0.9em;
-            margin-bottom: 19px;
-            text-align: left; /* Align text to the left */
-            padding-left: 20px; /* Add padding to align with Email */
-        }
         @media (max-width: 768px) {
-    .social-links li {
-        margin: 0 3px; /* Thậm chí khoảng cách còn nhỏ hơn trên thiết bị di động */
-    }
-    .social-links img {
-        width: 20px; /* Làm nhỏ biểu tượng lại trên thiết bị di động */
-        height: 20px;
-    }
-}
+            .social-links li {
+                margin: 0 3px;
+            }
+            .social-links img {
+                width: 20px;
+                height: 20px;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -130,24 +125,16 @@
     <div class="container">
         <div class="avatar-container">
             <img src="https://i.pinimg.com/originals/fb/e1/50/fbe1508668f176e7b2740df526c8d4dc.gif" alt="Ảnh đại diện" class="avatar">
-            <h1 class="name">
-                Minh Trí
-                <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Hình ảnh nhỏ" style="width: 20px; height: 20px; vertical-align: middle;">
-            </h1>          
+            <h1 class="name">Minh Trí <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Hình ảnh nhỏ" style="width: 20px; height: 20px; vertical-align: middle;"></h1>
         </div>
         <ul class="social-links">
             <li><a href="https://www.facebook.com/decsrc" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a></li>
             <li><a href="https://www.facebook.com/messages/t/" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/fbmessenger.png" alt="Messenger"></a></li>
             <li><a href="https://github.com/minhtri2906007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/github.png" alt="GitHub"></a></li>
-            <li><a href="https://web.telegram.com/@minhtri2907" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram"></a></li>
             <li><a href="https://www.tiktok.com/@minhtri.tr2007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/tiktok.png" alt="TikTok"></a></li>
-        </ul>
-        <ul>
-            <li><span class="bold">phone</span> <span class="bold">0372372156</span></li>
-            <li><span class="bold">mbbank</span> <span class="bold">29060372156</span></li>
         </ul>        
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/fcZbRkxsdbE?si=8IIalRwfae_8k7JP" title="Trình phát video YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/fcZbRkxsdbE?si=8IIalRwfae_8k7JP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
     <script>
@@ -156,18 +143,14 @@
             var month = now.getMonth() + 1;
             var day = now.getDate();
             var year = now.getFullYear();
-
             var dateString = day + '/' + month + '/' + year;
-
             var hours = now.getHours();
             var minutes = now.getMinutes();
             var seconds = now.getSeconds();
             var timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
             document.getElementById('date').textContent = dateString;
             document.getElementById('time').textContent = timeString;
         }
-
         setInterval(updateClock, 1000);
     </script>
 </body>
