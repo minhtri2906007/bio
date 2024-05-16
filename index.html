@@ -5,14 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minh Trí</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://raw.githubusercontent.com/weixiong15/PHP-Bookstore-Website-Example/master/bookstore/image/bg.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: transparent;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        #date, #time {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        #time {
+            top: 50px;
+        }
+        .social-links {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .social-links li {
+            margin: 0 5px;
+        }
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .link {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .link:hover {
+            color: #00bfff;
+            text-decoration: underline;
+        }
+        .avatar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px 2px #ffffff;
+        }
+        .name {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: transparent;
+            margin-top: 30px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .social-links li {
+                margin: 0 3px;
+            }
+            .social-links img {
+                width: 20px;
+                height: 20px;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="date"></div>
     <div id="time"></div>
     <div class="container">
         <div class="avatar-container">
-            <img src="https://i.pinimg.com/originals/fb/e1/50/fbe1508668f176e7b2740df526c8d4dc.gif" alt="Ảnh đại diện" class="avatar">
+            <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg" alt="Ảnh đại diện" class="avatar">
             <h1 class="name">Minh Trí <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Hình ảnh nhỏ" style="width: 20px; height: 20px; vertical-align: middle;"></h1>
         </div>
         <ul class="social-links">
@@ -20,11 +132,27 @@
             <li><a href="https://www.facebook.com/messages/t/" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/fbmessenger.png" alt="Messenger"></a></li>
             <li><a href="https://github.com/minhtri2906007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/github.png" alt="GitHub"></a></li>
             <li><a href="https://www.tiktok.com/@minhtri.tr2007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/tiktok.png" alt="TikTok"></a></li>
+            <li><a href="https://t.me/minhtri2907" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/768px-Telegram_logo.svg.png" alt="Tele"></a></li>
         </ul>        
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Z8idGAbGZog?si=PHTs8n0aArDuvwX_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var year = now.getFullYear();
+            var dateString = day + '/' + month + '/' + year;
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            document.getElementById('date').textContent = dateString;
+            document.getElementById('time').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
