@@ -1,142 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minh Trí</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://raw.githubusercontent.com/weixiong15/PHP-Bookstore-Website-Example/master/bookstore/image/bg.gif');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            height: 100vh;
-            color: white;
-        }
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-        h1 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.5em;
-            font-weight: 700;
-        }
-        .time {
-            position: absolute;
-            top: 10px;
-            right: 10px; /* Đặt vị trí ở góc trái */
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.2em;
-            color: white;
-        }
-        #time {
-            display: inline-block;
-            /* Xóa bóng đen của đồng hồ */
-            text-shadow: none;
-        }
-        .social-links {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
-        .social-links li {
-            margin: 0 5px;
-        }
-        .social-links img {
-            width: 5vw;
-            height: 5vw;
-            max-width: 50px;
-            max-height: 50px;
-            min-width: 20px;
-            min-height: 20px;
-            border-radius: 50%;
-            vertical-align: middle;
-        }
-        .link {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .link:hover {
-            color: #00bfff;
-            text-decoration: underline;
-        }
-        .avatar-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            box-shadow: 0 0 8px 2px #fff;
-        }
-        .name {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            background: transparent;
-            margin-top: 30px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 10px;
-        }
-        @media (max-width: 768px) {
-            .social-links img {
-                width: 7vw;
-                height: 7vw;
-                max-width: 30px;
-                max-height: 30px;
-            }
-            .avatar {
-                width: 80px;
-                height: 80px;
-            }
-        }
-        @media (max-width: 480px) {
-            .social-links img {
-                width: 10vw;
-                height: 10vw;
-                max-width: 25px;
-                max-height: 25px;
-            }
-            .avatar {
-                width: 60px;
-                height: 60px;
-            }
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <div class="time">
@@ -146,9 +17,9 @@
             <img src="https://inkythuatso.com/uploads/thumbnails/800/2023/03/9-anh-dai-dien-trang-inkythuatso-03-15-27-03.jpg" alt="Ảnh đại diện của Minh Trí" class="avatar">
             <h1 class="name">Minh Trí <img src="https://lennguyenmedia.com/wp-content/uploads/2021/11/image-18.png" alt="Hình ảnh nhỏ" style="width: 20px; height: 20px; vertical-align: middle;"></h1>
         </div>
-        
+
         <!-- Tiêu đề phụ -->
-        <h2>Liên hệ : 👉0372372156👈 </h2>    
+        <h2>Liên hệ : 👉0372372156👈 </h2>
 
         <ul class="social-links">
             <li><a href="https://www.facebook.com/decsrc" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a></li>
@@ -156,60 +27,12 @@
             <li><a href="https://github.com/minhtri2906007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/github.png" alt="GitHub"></a></li>
             <li><a href="https://www.tiktok.com/@minhtri.tr2007" class="link"><img src="https://bio.linkcdn.cc/bio/links/icons/social/tiktok.png" alt="TikTok"></a></li>
             <li><a href="https://t.me/minhtri2907" class="link"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/768px-Telegram_logo.svg.png" alt="Telegram"></a></li>
-        </ul>        
+        </ul>
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/9BTTLAcw3Bk?si=ksnKbxdo5Q5sz2t3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-<script>
-    function updateClock() {
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var seconds = now.getSeconds();
-        var timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-        document.getElementById('time').textContent = timeString;
-    }
-    setInterval(updateClock, 1000);
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
